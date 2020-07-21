@@ -31,6 +31,8 @@ If the installation was successful, you should be able to run the following comm
 
     $ npm start
 
+    Goto http://localhost:8080 to check the application
+
 ## Test the project
 
     $ npm test

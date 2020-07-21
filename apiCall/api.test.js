@@ -8,7 +8,7 @@ describe("Lives in London function", () => {
         fetch.mockClear();
     });
 
-    test("it should call api and return london users", async () => {
+    test("it should call api and return who lives in london", async () => {
         fetch.mockImplementation(() => Promise.resolve({
             json: () => Promise.resolve([
                 {
