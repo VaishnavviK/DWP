@@ -10,8 +10,7 @@ For development, you need Node.js and npm installed in your environement.
 ### Node
 - #### Node installation on Windows
 
-  Just go on [official Node.js website](https://nodejs.org/) and download the installer.
-Also, be sure to have `git` available in your PATH, `npm` might need it (You can find git [here](https://git-scm.com/)).
+  Go to node [official website](https://nodejs.org/) and install it.
 
 If the installation was successful, you should be able to run the following command.
 
@@ -20,19 +19,15 @@ If the installation was successful, you should be able to run the following comm
 
     $ npm --version
     6.14.5
-
-If you need to update `npm`, you can make it using `npm`! Cool right? After running the following command, just open again the command line and be happy.
-
-    $ npm install npm -g
 ---
 
 ## Install
 
     $ git clone https://github.com/VaishnavviK/DWP.git
-    $ cd DWP_Project
+    $ cd DWP
     $ npm install
 
-## Run the project
+## Start the project
 
     $ npm start
 
@@ -42,8 +37,10 @@ If you need to update `npm`, you can make it using `npm`! Cool right? After runn
 
 ## Lint test the project
 
-    $ npm lint
+    $ npm run lint
 
 ## Lint fix the project
 
-    $ npm lint:fix
+    More lint rules can be added to .eslintrc.js file, rules section.
+
+    $ npm run lint:fix
