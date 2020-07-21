@@ -1,0 +1,26 @@
+{
+  "name": "test_project",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "test": "jest",
+    "start": "node index.js",
+    "lint": "eslint .",
+    "lint:fix": "eslint --fix --ext .js ."
+  },
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "express": "^4.17.1",
+    "express-async-await": "^1.1.0",
+    "geopoint": "^1.0.1",
+    "node-fetch": "^2.6.0",
+    "path": "^0.12.7",
+    "request": "^2.88.2"
+  },
+  "devDependencies": {
+    "eslint": "^7.5.0",
+    "jest": "^26.1.0"
+  }
+}
