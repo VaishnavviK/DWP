@@ -30,8 +30,8 @@ describe("Lives in London function", () => {
                     longitude: 10.901604
                 }
             ]),
-        }))
-        const apiCall = await API.londonUsers();
+        }));
+        const apiCall = await API.londonResidents();
 
         expect(apiCall).toEqual(["Tiffi Colbertson", "Katee Gopsall"]);
         expect(fetch).toHaveBeenCalledTimes(1);
@@ -40,7 +40,7 @@ describe("Lives in London function", () => {
     test("it should return error when API call fails", async () => {
         fetch.mockImplementationOnce(() => Promise.reject("API is down"));
 
-        const apiCall = await API.londonUsers();
+        const apiCall = await API.londonResidents();
 
         expect(apiCall).toEqual("API is down");
         expect(fetch).toHaveBeenCalledTimes(1);
@@ -74,7 +74,7 @@ describe("Lives within 50 miles of London function", () => {
                     longitude: 0.3860497
                 }
             ]),
-        }))
+        }));
         const apiCall = await API.within50MilesofLondon();
 
         expect(apiCall).toEqual(["Hugo Lynd", "Phyllys Hebbs"]);

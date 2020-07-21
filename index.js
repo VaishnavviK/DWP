@@ -11,12 +11,14 @@ router.get('/', (req, res) => {
     res.sendFile(path.join(__dirname + '/index.html'));
 });
 
-router.get('/LondonUsersAndNearby50Miles', async (req, res) => {
-    const fromLondon = await API.londonUsers();
+router.get('/londonResidentsAndNearby50Miles', async (req, res) => {
+    const fromLondon = await API.londonResidents();
     const within50MilesRadius = await API.within50MilesofLondon();
-    const finalList = fromLondon.concat(within50MilesRadius);
 
-    res.send(finalList.toString());
+    const list = fromLondon.concat(within50MilesRadius);
+    const finalList = list.toString().replace(/,/g, ", ");
+
+    res.send(finalList);
 });
 
 app.listen(8080);

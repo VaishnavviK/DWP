@@ -2,7 +2,7 @@ const fetch = require("node-fetch");
 const GeoPoint = require("geopoint");
 
 // This function returns who lives in London
-exports.londonUsers = async () => {
+exports.londonResidents = async () => {
     try {
         let nameList = [];
         const users = await fetch('https://bpdts-test-app.herokuapp.com/city/London/users').then((res) => {
@@ -10,14 +10,14 @@ exports.londonUsers = async () => {
         });
 
         for(const i in users) {
-            const name = (users[i].first_name).concat(" ", users[i].last_name)
+            const name = (users[i].first_name).concat(" ", users[i].last_name);
             nameList.push(name);
         }
         return nameList;
     } catch (e) {
         return e;
     }
-}
+};
 
 // This function returns who lives nearby 50 miles of London
 exports.within50MilesofLondon = async () => {
@@ -33,7 +33,7 @@ exports.within50MilesofLondon = async () => {
             const miles = GeoPoint.kilometersToMiles(val);
 
             if (parseInt(miles) <= 50) {
-                const name = (users[i].first_name).concat(" ", users[i].last_name)
+                const name = (users[i].first_name).concat(" ", users[i].last_name);
                 nameList.push(name);
             }
         }
@@ -41,4 +41,4 @@ exports.within50MilesofLondon = async () => {
     } catch (e) {
         return e;
     }
-}
+};
